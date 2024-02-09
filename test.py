@@ -1,14 +1,19 @@
-n = int(input())
 
-sum=0
-for i in range(1, n+1):
-    z= 0
-    for j in range(1,i+1):
-        z +=j
-        print(j, end='')
-        if j < i :
-            print('+', end='')
-    print(' =',z)
-    sum +=z
 
-print('Total sum of series is:',sum)
+ans = tuple(map(int, input().split()))
+
+a = []
+for i in ans:
+    a.append(i)
+    
+for i in range(0,len(a)-1):
+    if a[0] < a[1]:
+        a.remove(a[0])
+        # print(a)
+    else:
+        a.remove(a[1])
+        # print(a)
+        
+for i in range(1, len(ans)+1):
+    if a[0] == ans[i-1]:
+        print(i)
