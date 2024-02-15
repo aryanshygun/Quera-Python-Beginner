@@ -5,7 +5,7 @@ n = [1,2,3]
 s = [2,1,2,3]
 
 t = int(input())
-ans = str(input())
+ans = list(map(int, input()))
 xlist = []
 # for i in ans:
     # xlist.append(i)
@@ -17,50 +17,29 @@ while len(n) < len(ans):
 while len(s) < len(ans):
     s.extend(s)
 
-# kscore = 0
-for i in ans:
-    kscore = 0
-    i = int(i)
+kscore = 0
+nscore = 0
+sscore = 0
+
+for i in range(len(ans)):
     if ans[i] == k[i]:
-        print('yea')
         kscore +=1
+    if ans[i] == n[i]:
+        nscore +=1
+    if ans[i] == s[i]:
+        sscore +=1
 
+# print('kscore', kscore)
+# print('nscore', nscore)
+# print('sscore', sscore)
 
-print(kscore)
+maxx = max(kscore, nscore, sscore)
 
-
-
-
-
-
-
-
-
-# for i in ans:
-#     i = int(i)
-#     kscore = 0
-#     for j in k:
-#         # print(i, type(i))
-#         # print(j, type(j))
-#         if i == j:
-#             kscore +=1
-
-# nscore = 0
-# for i in ans:
-#     i = int(i)
-
-#     for j in n:
-#         if i == j:
-#             nscore +=1
-    
-# sscore = 0   
-# for i in ans:
-#     i = int(i)
-
-#     for j in s:
-#         if i == j:
-#             sscore +=1
-            
-# print('k',kscore)
-# print('n', nscore)
-# print('s', sscore)
+print(maxx)
+# print(maxx, type(maxx))
+if kscore == maxx:
+    print('keyvoon')
+if nscore == maxx:
+    print('nezam')
+if sscore == maxx:
+    print('shir farhad')

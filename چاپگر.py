@@ -30,4 +30,3 @@ for i in range(x):
                 print('.', end = '')
             else:
                 print('X', end = '')
-    print()
