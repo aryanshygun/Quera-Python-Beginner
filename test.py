@@ -1,19 +1,17 @@
-def my_decorator(func): 
-	def wrapper_function(*args, **kwargs): 
-		print("*"*10) 
-		func(*args, **kwargs) 
-		print("*"*10) 
-	return wrapper_function 
-
-
-def say_hello(): 
-	print("Hello Geeks!") 
-
-@my_decorator
-def say_bye(): 
-	print("Bye Geeks!") 
-
-
-say_hello = my_decorator(say_hello) 
-say_hello() 
-say_bye() 
+n = int(input())
+xlist = []
+for i in range(n):
+    x = input()
+    xx = []
+    for i in x:
+        xx.append(i)
+    xx = set(xx)
+    xx = list(xx)
+    xlist.append(xx)
+for i in range(len(xlist)):
+    for j in range(len(xlist[i])):
+        xlist.pop(i)
+        xlist.insert(i, j+1)
+# print(xlist)
+print(max(xlist))
+# print(len(max(xlist)))
