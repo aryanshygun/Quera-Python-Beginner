@@ -1,3 +1,6 @@
-x = 0
-x = x + 2.3
+x = '2 en'
+a, b = x.split()
+print(a)
+print(b)
 print(x)
+

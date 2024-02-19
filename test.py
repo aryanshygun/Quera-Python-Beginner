@@ -1,17 +1,16 @@
-n = int(input())
-xlist = []
-for i in range(n):
+En = {1: 'One', 2: 'Two' , 3: 'Three', 4: 'Four'  , 5: 'Five' }
+Fr  = {1: 'Un' , 2: 'Deux', 3: 'Trois', 4: 'Quatre', 5: 'Cinq'}
+x = input()
+
+xlist = list()
+while x != 'End':
+    a, b = x.split()
+    a = int(a)
+    if b == 'En':
+        xlist.append(En.get(a))
+    if b == 'Fr':
+        xlist.append(Fr.get(a))
     x = input()
-    xx = []
-    for i in x:
-        xx.append(i)
-    xx = set(xx)
-    xx = list(xx)
-    xlist.append(xx)
-for i in range(len(xlist)):
-    for j in range(len(xlist[i])):
-        xlist.pop(i)
-        xlist.insert(i, j+1)
-# print(xlist)
-print(max(xlist))
-# print(len(max(xlist)))
+
+for i in xlist:
+    print(i)
