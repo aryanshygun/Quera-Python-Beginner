@@ -9,12 +9,16 @@ for i in range(n):
     drinks.append([raw_value, qty])
 drinks.sort(key= lambda item: item[1])
 
+
 quality = 0
 while len(drinks) != 0:
     j , k = drinks[0][0], drinks[0][1]
     if k > vol:
-        k = vol  
+        k = vol
+    else:
+        pass
     vol -= k
-    quality += j*k    
+    quality += j*k
     drinks.pop(0)
+
 print(round(quality, 1))
