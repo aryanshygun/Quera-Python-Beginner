@@ -1,20 +1,36 @@
-# https://quera.org/contest/assignments/64031/problems/220995
+xdict = {}
 
-n, vol = map(int, input().split())
+x = input()
+while x!= 'End':
+    a, b = x.split()
+    b = float(b)
+    xdict[a] = b
+    x = input()
+# print(xdict)
 
-drinks = []
-for i in range(n):
-    whole_value, qty = map(int, input().split())
-    raw_value = whole_value / qty
-    drinks.append([raw_value, qty])
-drinks.sort(key= lambda item: item[1])
+whole = 0
+n = 0
+for j in xdict.values():
+    whole += j
+    n +=1
+avg = whole / n
+# print(avg)
 
-quality = 0
-while len(drinks) != 0:
-    j , k = drinks[0][0], drinks[0][1]
-    if k > vol:
-        k = vol  
-    vol -= k
-    quality += j*k    
-    drinks.pop(0)
-print(round(quality, 1))
+
+selected = []
+for i, j in xdict.items():
+    if j >= avg:
+        selected.append(i)
+    
+        
+print(selected)
+
+whole2 = 0
+n2 = 0
+
+for i in selected:
+    n2 +=1
+    whole2 += xdict[i]
+# print('who', whole2)
+avg2 = whole2 / n2
+print(avg2)
