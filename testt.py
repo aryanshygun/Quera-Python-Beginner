@@ -16,5 +16,5 @@ print(xmax, ymax)
 
 x = []
 
-for i in range(0, xmax):
-    if i % 2 == 0:
+# for i in range(0, xmax):
+#     if i % 2 == 0:
