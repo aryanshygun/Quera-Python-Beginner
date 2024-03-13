@@ -1,3 +1,4 @@
-x = '123423'
+x = {'a': 1, 'b': 2}
 
-print(x[0:2])
+for i, j in x.items():
+    print(i, j)
