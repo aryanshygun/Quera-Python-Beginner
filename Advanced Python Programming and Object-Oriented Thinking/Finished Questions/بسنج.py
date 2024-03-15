@@ -1,6 +1,7 @@
 import re
 
 def validate_email(x):
+    # template = r'^.+(@)\w+(\.)\w{3}'
     template = r'[a-zA-Z0-9._%+-]+(@)\w+(\.)\w{3}$'
     if re.match(template, x):
         return True
