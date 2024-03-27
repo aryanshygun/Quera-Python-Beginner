@@ -1,9 +1,3 @@
-a = [5, 8, 1, 3, 2, 6]
+a = [3,4, 2, 4, 6, 3]
 
-for i in range(len(a)):
-    min = i
-    for j in range(i, len(a)):
-        if a[j] < a[min]:
-            min = j
-    a[i], a[min] = a[min], a[i] 
-print(a)
+print(a[2::].index(3) + 2)
