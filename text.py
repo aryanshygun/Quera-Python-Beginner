@@ -1,28 +1,25 @@
-n, k = 4,7
-# xlist = []
-# for i in range(1, n + 1):
-#     xlist.append(i)
-#     xlist.append(i)
 
-xlist = [1, 1, 2, 2, 3, 3, 4, 4]
-# xlist = [1,2,3,4]
-ylist = []
+# n = int(input())
+# xlist = list(map(int, input().split()))
 
-i = 0
-p = k
-# while i < 7:
-while xlist:
-    u = i % len(xlist)
-    ylist.extend(xlist)
-    if p / k == 1:
-        xlist.pop()
-        # ylist.pop()
-        p +=1
-    else:
-        i += 1
-        p += 1
-print(len(ylist))
-        
-        
-for i in range(0, len(ylist), k):
-    print(*ylist[i:i+k])
+n = 8
+xlist = [1, 9, 8, 7, 5, 3, 2, 4]
+
+xmax = xlist.index(max(xlist))
+
+
+def soma(x, xlist):
+    if xlist == sorted(xlist) or xlist == sorted(xlist, reverse=True):
+        return 'Yes'
+    q = xlist[x]
+    w = xlist[x::]
+    e = min(w)
+    if q == e:
+        return 'Yes'
+    for i in range(x + 1, len(xlist) - 1):
+        if xlist[i] > xlist[i+1]:
+            return soma(x + 1, xlist)
+        else:
+            return 'No'            
+
+print(soma(xmax, xlist))
