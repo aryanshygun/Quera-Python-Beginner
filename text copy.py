@@ -1,8 +1,7 @@
-class ExceptionProxy(Exception):
-    def __init__(self, msg, function):
-        self.msg = msg
-        self.function = function
+xlist = [1,1,3,4,2,2,4]
 
-
-a = ExceptionProxy('fuck', 'me')
-print(a.msg)
+xdict ={}
+for i in xlist:
+    xdict[i] = xdict.get(i, 0) + 1
+    
+print(xdict)
